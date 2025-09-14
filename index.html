@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegalEase India - Legal Cases & Business License Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-balance-scale"></i>
+                <span>LegalEase</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#legal-cases" class="nav-link">Legal Cases</a></li>
+                <li><a href="#business-licenses" class="nav-link">Business Licenses</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li id="auth-menu" class="auth-menu">
+                    <button id="loginBtn" class="btn btn-outline">Login</button>
+                    <button id="signupBtn" class="btn btn-primary">Sign Up</button>
+                </li>
+                <li id="user-menu" class="user-menu" style="display: none;">
+                    <div class="user-dropdown">
+                        <button class="user-btn">
+                            <i class="fas fa-user"></i>
+                            <span id="userName">User</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#dashboard" class="dropdown-item">
+                                <i class="fas fa-tachometer-alt"></i> Dashboard
+                            </a>
+                            <a href="#profile" class="dropdown-item">
+                                <i class="fas fa-user-edit"></i> Profile
+                            </a>
+                            <a href="#admin" class="dropdown-item admin-link" style="display: none;">
+                                <i class="fas fa-cog"></i> Admin Panel
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Navigate Legal Cases & Business Licenses with Confidence</h1>
+                <p>Get expert guidance on civil legal cases and business license requirements across India. Simplified explanations, step-by-step guides, and AI-powered assistance.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('legal-cases')">
+                        <i class="fas fa-gavel"></i>
+                        Explore Legal Cases
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('business-licenses')">
+                        <i class="fas fa-file-alt"></i>
+                        Check License Requirements
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Legal Protection</h3>
+                    <p>Comprehensive legal guidance</p>
+                </div>
+                <div class="hero-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Business Support</h3>
+                    <p>License requirements made simple</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legal Cases Section -->
+    <section id="legal-cases" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Legal Cases Explained</h2>
+                <p>Understand civil legal cases with simple, step-by-step explanations</p>
+            </div>
+            
+            <div class="case-categories">
+                <div class="category-card" onclick="openCaseModal('landlord-tenant')">
+                    <i class="fas fa-home"></i>
+                    <h3>Landlord-Tenant Disputes</h3>
+                    <p>Security deposits, rent issues, eviction procedures</p>
+                </div>
+                <div class="category-card" onclick="openCaseModal('consumer-rights')">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>Consumer Rights</h3>
+                    <p>Product defects, service issues, refunds</p>
+                </div>
+                <div class="category-card" onclick="openCaseModal('contract-disputes')">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>Contract Disputes</h3>
+                    <p>Breach of contract, payment issues</p>
+                </div>
+                <div class="category-card" onclick="openCaseModal('property-disputes')">
+                    <i class="fas fa-landmark"></i>
+                    <h3>Property Disputes</h3>
+                    <p>Boundary issues, property rights</p>
+                </div>
+                <div class="category-card" onclick="openCaseModal('employment-labor')">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Employment & Labor</h3>
+                    <p>Wage disputes, wrongful termination, workplace harassment</p>
+                </div>
+                <div class="category-card" onclick="openCaseModal('family-law')">
+                    <i class="fas fa-heart"></i>
+                    <h3>Family Law</h3>
+                    <p>Divorce, custody, maintenance, domestic violence</p>
+                </div>
+                <div class="category-card" onclick="openCaseModal('criminal-law')">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Criminal Law</h3>
+                    <p>Bail, FIR, criminal complaints, legal aid</p>
+                </div>
+                <div class="category-card" onclick="openCaseModal('banking-finance')">
+                    <i class="fas fa-university"></i>
+                    <h3>Banking & Finance</h3>
+                    <p>Loan disputes, credit card issues, banking fraud</p>
+                </div>
+                <div class="category-card" onclick="openCaseModal('motor-vehicle')">
+                    <i class="fas fa-car"></i>
+                    <h3>Motor Vehicle</h3>
+                    <p>Accident claims, insurance disputes, traffic violations</p>
+                </div>
+                <div class="category-card" onclick="openCaseModal('medical-negligence')">
+                    <i class="fas fa-user-md"></i>
+                    <h3>Medical Negligence</h3>
+                    <p>Medical malpractice, hospital negligence, compensation</p>
+                </div>
+                <div class="category-card" onclick="openCaseModal('intellectual-property')">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Intellectual Property</h3>
+                    <p>Copyright, trademark, patent disputes</p>
+                </div>
+                <div class="category-card" onclick="openCaseModal('cyber-crimes')">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Cyber Crimes</h3>
+                    <p>Online fraud, data theft, cyber harassment</p>
+                </div>
+            </div>
+
+            <div class="ai-assistant">
+                <h3>AI Legal Assistant</h3>
+                <p>Describe your legal issue and get instant guidance</p>
+                <div class="ai-input-container">
+                    <input type="text" id="legalQuery" placeholder="e.g., My landlord hasn't returned my security deposit...">
+                    <button onclick="getLegalAdvice()" class="btn btn-primary">
+                        <i class="fas fa-robot"></i>
+                        Get Advice
+                    </button>
+                </div>
+                <div id="legalResponse" class="ai-response"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Licenses Section -->
+    <section id="business-licenses" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Business License Requirements</h2>
+                <p>Find out what licenses you need for your business across different states</p>
+            </div>
+
+            <div class="license-finder">
+                <div class="finder-form">
+                    <h3>Find Your License Requirements</h3>
+                    <div class="form-group">
+                        <label for="businessType">Business Type</label>
+                        <select id="businessType">
+                            <option value="">Select Business Type</option>
+                            <option value="food-stall">Food Stall/Restaurant</option>
+                            <option value="online-retailer">Online Retailer</option>
+                            <option value="beauty-parlour">Beauty Parlour</option>
+                            <option value="consulting">Consulting Services</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="trading">Trading Business</option>
+                            <option value="pharmacy">Pharmacy/Chemist Shop</option>
+                            <option value="gym-fitness">Gym/Fitness Center</option>
+                            <option value="hospital-clinic">Hospital/Clinic</option>
+                            <option value="school-education">School/Educational Institution</option>
+                            <option value="transport-logistics">Transport/Logistics</option>
+                            <option value="real-estate">Real Estate Agency</option>
+                            <option value="insurance">Insurance Agency</option>
+                            <option value="banking-finance">Banking/Financial Services</option>
+                            <option value="it-software">IT/Software Services</option>
+                            <option value="construction">Construction/Contracting</option>
+                            <option value="garage-automobile">Garage/Automobile Services</option>
+                            <option value="hotel-hospitality">Hotel/Hospitality</option>
+                            <option value="entertainment">Entertainment/Event Management</option>
+                            <option value="agriculture">Agriculture/Farming</option>
+                            <option value="textile-garments">Textile/Garments</option>
+                            <option value="jewelry-gems">Jewelry/Gems</option>
+                            <option value="electronics">Electronics/Electrical</option>
+                            <option value="pharmaceuticals">Pharmaceuticals</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <select id="state">
+                            <option value="">Select State</option>
+                            <option value="delhi">Delhi</option>
+                            <option value="mumbai">Maharashtra</option>
+                            <option value="bangalore">Karnataka</option>
+                            <option value="chennai">Tamil Nadu</option>
+                            <option value="kolkata">West Bengal</option>
+                            <option value="hyderabad">Telangana</option>
+                            <option value="gujarat">Gujarat</option>
+                            <option value="rajasthan">Rajasthan</option>
+                            <option value="punjab">Punjab</option>
+                            <option value="haryana">Haryana</option>
+                            <option value="uttar-pradesh">Uttar Pradesh</option>
+                            <option value="bihar">Bihar</option>
+                            <option value="odisha">Odisha</option>
+                            <option value="kerala">Kerala</option>
+                            <option value="andhra-pradesh">Andhra Pradesh</option>
+                            <option value="assam">Assam</option>
+                            <option value="jharkhand">Jharkhand</option>
+                            <option value="chhattisgarh">Chhattisgarh</option>
+                            <option value="himachal-pradesh">Himachal Pradesh</option>
+                            <option value="uttarakhand">Uttarakhand</option>
+                            <option value="goa">Goa</option>
+                            <option value="manipur">Manipur</option>
+                            <option value="meghalaya">Meghalaya</option>
+                            <option value="mizoram">Mizoram</option>
+                            <option value="nagaland">Nagaland</option>
+                            <option value="sikkim">Sikkim</option>
+                            <option value="tripura">Tripura</option>
+                            <option value="arunachal-pradesh">Arunachal Pradesh</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" placeholder="Enter your city">
+                    </div>
+                    <button onclick="getLicenseRequirements()" class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                        Find Requirements
+                    </button>
+                </div>
+            </div>
+
+            <div id="licenseResults" class="license-results"></div>
+
+            <div class="state-licenses">
+                <h3>State-wise License Information</h3>
+                <div class="state-grid">
+                    <div class="state-card" onclick="openStateModal('delhi')">
+                        <h4>Delhi</h4>
+                        <p>NCT of Delhi</p>
+                    </div>
+                    <div class="state-card" onclick="openStateModal('mumbai')">
+                        <h4>Maharashtra</h4>
+                        <p>Mumbai, Pune, Nagpur</p>
+                    </div>
+                    <div class="state-card" onclick="openStateModal('bangalore')">
+                        <h4>Karnataka</h4>
+                        <p>Bangalore, Mysore</p>
+                    </div>
+                    <div class="state-card" onclick="openStateModal('chennai')">
+                        <h4>Tamil Nadu</h4>
+                        <p>Chennai, Coimbatore</p>
+                    </div>
+                    <div class="state-card" onclick="openStateModal('gujarat')">
+                        <h4>Gujarat</h4>
+                        <p>Ahmedabad, Surat, Vadodara</p>
+                    </div>
+                    <div class="state-card" onclick="openStateModal('rajasthan')">
+                        <h4>Rajasthan</h4>
+                        <p>Jaipur, Jodhpur, Udaipur</p>
+                    </div>
+                    <div class="state-card" onclick="openStateModal('punjab')">
+                        <h4>Punjab</h4>
+                        <p>Chandigarh, Ludhiana, Amritsar</p>
+                    </div>
+                    <div class="state-card" onclick="openStateModal('kerala')">
+                        <h4>Kerala</h4>
+                        <p>Kochi, Thiruvananthapuram</p>
+                    </div>
+                    <div class="state-card" onclick="openStateModal('uttar-pradesh')">
+                        <h4>Uttar Pradesh</h4>
+                        <p>Lucknow, Kanpur, Agra</p>
+                    </div>
+                    <div class="state-card" onclick="openStateModal('west-bengal')">
+                        <h4>West Bengal</h4>
+                        <p>Kolkata, Howrah, Durgapur</p>
+                    </div>
+                    <div class="state-card" onclick="openStateModal('andhra-pradesh')">
+                        <h4>Andhra Pradesh</h4>
+                        <p>Visakhapatnam, Vijayawada</p>
+                    </div>
+                    <div class="state-card" onclick="openStateModal('telangana')">
+                        <h4>Telangana</h4>
+                        <p>Hyderabad, Warangal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Get quick answers to common legal and business questions</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>Do I need an FSSAI license for selling homemade snacks online?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, if you're selling food products online, you need an FSSAI license. For small-scale home businesses with turnover less than ₹12 lakhs, you can get a basic FSSAI registration. For higher turnover, you need a full FSSAI license.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>What licenses do I need to open a beauty parlour in Delhi?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For a beauty parlour in Delhi, you need: 1) Trade License from MCD, 2) Shops & Establishments Registration, 3) Professional Tax Registration, 4) GST Registration (if turnover > ₹20 lakhs), 5) Health Department License for hygiene compliance.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>How long does it take to resolve a civil case in India?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Civil cases typically take 2-5 years to resolve, depending on complexity and court workload. Commercial courts and fast-track courts may resolve cases faster. Alternative dispute resolution methods like mediation can resolve cases in 3-6 months.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>What is the time limit for filing a civil suit?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most civil suits have a 3-year limitation period from when the cause of action arose. However, this varies by case type: contract disputes (3 years), property disputes (12 years), recovery of money (3 years). Always consult a lawyer for specific cases.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chatbot-section">
+                <h3>Ask Our AI Assistant</h3>
+                <div class="chatbot-container">
+                    <div id="chatbotMessages" class="chatbot-messages"></div>
+                    <div class="chatbot-input">
+                        <input type="text" id="chatbotInput" placeholder="Ask any legal or business question...">
+                        <button onclick="sendChatbotMessage()" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get in Touch</h2>
+                <p>Need personalized legal advice? Contact our experts</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 9306461620</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>ap2123449@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>New Delhi, India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>LegalEase India</h4>
+                    <p>Simplifying legal processes and business compliance across India.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#legal-cases">Legal Cases</a></li>
+                        <li><a href="#business-licenses">Business Licenses</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Disclaimer</h4>
+                    <p>This information is for general guidance only. Please consult a qualified legal professional for specific cases.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LegalEase India. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Authentication Modals -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content auth-modal">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <div class="auth-container">
+                <div class="auth-header">
+                    <h2>Welcome Back</h2>
+                    <p>Sign in to your account</p>
+                </div>
+                <form id="loginForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="rememberMe">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-password">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+                    <div class="auth-divider">
+                        <span>or</span>
+                    </div>
+                    <p class="auth-switch">
+                        Don't have an account? 
+                        <a href="#" id="switchToSignup">Sign up here</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="signupModal" class="modal">
+        <div class="modal-content auth-modal">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <div class="auth-container">
+                <div class="auth-header">
+                    <h2>Create Account</h2>
+                    <p>Join LegalEase India today</p>
+                </div>
+                <form id="signupForm" class="auth-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="signupFirstName">First Name</label>
+                            <input type="text" id="signupFirstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupLastName">Last Name</label>
+                            <input type="text" id="signupLastName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email Address</label>
+                        <input type="email" id="signupEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPhone">Phone Number</label>
+                        <input type="tel" id="signupPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" required>
+                        <div class="password-strength">
+                            <div class="strength-bar">
+                                <div class="strength-fill"></div>
+                            </div>
+                            <span class="strength-text">Password strength</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupConfirmPassword">Confirm Password</label>
+                        <input type="password" id="signupConfirmPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="agreeTerms" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="#" class="terms-link">Terms of Service</a> and <a href="#" class="terms-link">Privacy Policy</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                    <div class="auth-divider">
+                        <span>or</span>
+                    </div>
+                    <p class="auth-switch">
+                        Already have an account? 
+                        <a href="#" id="switchToLogin">Sign in here</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Dashboard Section -->
+    <section id="dashboard" class="section" style="display: none;">
+        <div class="container">
+            <div class="section-header">
+                <h2>User Dashboard</h2>
+                <p>Welcome back, <span id="dashboardUserName">User</span>!</p>
+            </div>
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="card-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>Legal Queries</h3>
+                    <p id="legalQueriesCount">0</p>
+                    <small>Total queries made</small>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>License Searches</h3>
+                    <p id="licenseSearchesCount">0</p>
+                    <small>License requirements checked</small>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <h3>Member Since</h3>
+                    <p id="memberSince">-</p>
+                    <small>Account creation date</small>
+                </div>
+                <div class="dashboard-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Activity Score</h3>
+                    <p id="activityScore">0</p>
+                    <small>Based on usage</small>
+                </div>
+            </div>
+            <div class="dashboard-content">
+                <div class="recent-activity">
+                    <h3>Recent Activity</h3>
+                    <div id="recentActivityList" class="activity-list">
+                        <div class="activity-item">
+                            <i class="fas fa-info-circle"></i>
+                            <div class="activity-content">
+                                <p>No recent activity</p>
+                                <small>Start exploring to see your activity here</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quick-actions">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="scrollToSection('legal-cases')">
+                            <i class="fas fa-gavel"></i>
+                            Ask Legal Question
+                        </button>
+                        <button class="btn btn-secondary" onclick="scrollToSection('business-licenses')">
+                            <i class="fas fa-file-alt"></i>
+                            Check License Requirements
+                        </button>
+                        <button class="btn btn-outline" onclick="scrollToSection('faq')">
+                            <i class="fas fa-question-circle"></i>
+                            Browse FAQ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Panel Section -->
+    <section id="admin" class="section" style="display: none;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Admin Panel</h2>
+                <p>Manage users and system settings</p>
+            </div>
+            <div class="admin-stats">
+                <div class="stat-card">
+                    <h3>Total Users</h3>
+                    <p id="totalUsers">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Users</h3>
+                    <p id="activeUsers">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>New This Month</h3>
+                    <p id="newUsers">0</p>
+                </div>
+            </div>
+            <div class="admin-content">
+                <div class="admin-tabs">
+                    <button class="tab-btn active" data-tab="users">Users</button>
+                    <button class="tab-btn" data-tab="analytics">Analytics</button>
+                    <button class="tab-btn" data-tab="settings">Settings</button>
+                </div>
+                <div class="tab-content">
+                    <div id="users-tab" class="tab-panel active">
+                        <div class="users-header">
+                            <h3>User Management</h3>
+                            <div class="search-box">
+                                <input type="text" id="userSearch" placeholder="Search users...">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                        <div class="users-table-container">
+                            <table class="users-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Joined</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="usersTableBody">
+                                    <!-- Users will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="analytics-tab" class="tab-panel">
+                        <h3>System Analytics</h3>
+                        <div class="analytics-grid">
+                            <div class="analytics-card">
+                                <h4>Legal Queries</h4>
+                                <p id="totalLegalQueries">0</p>
+                            </div>
+                            <div class="analytics-card">
+                                <h4>License Searches</h4>
+                                <p id="totalLicenseSearches">0</p>
+                            </div>
+                            <div class="analytics-card">
+                                <h4>FAQ Views</h4>
+                                <p id="totalFaqViews">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="settings-tab" class="tab-panel">
+                        <h3>System Settings</h3>
+                        <div class="settings-form">
+                            <div class="form-group">
+                                <label>System Name</label>
+                                <input type="text" value="LegalEase India" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Version</label>
+                                <input type="text" value="1.0.0" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Database Status</label>
+                                <input type="text" value="Connected" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div id="caseModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('caseModal')">&times;</span>
+            <div id="caseModalContent"></div>
+        </div>
+    </div>
+
+    <div id="stateModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('stateModal')">&times;</span>
+            <div id="stateModalContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
