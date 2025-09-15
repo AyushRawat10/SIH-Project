@@ -17,8 +17,8 @@
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    color: var(--federal-blue);
-    background-color: var(--light-cyan);
+    color: #acb4e2;
+    background-color: #0a0a23;
 }
 
 .container {
@@ -94,7 +94,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--federal-blue) 0%, var(--honolulu-blue) 50%, var(--pacific-cyan) 100%);
+    background: linear-gradient(to top, #0a0a23 0%, var(--honolulu-blue) 50%, var(--pacific-cyan) 100%);
     color: white;
     padding: 120px 0 80px;
     min-height: 100vh;
@@ -216,7 +216,7 @@ body {
 }
 
 .bg-light {
-    background-color: var(--non-photo-blue);
+    background-color: #0a0a23;
 }
 
 .section-header {
@@ -228,12 +228,12 @@ body {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: #1e293b;
+    color: white;
 }
 
 .section-header p {
     font-size: 1.1rem;
-    color: #64748b;
+    color: #c3d1e5;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -568,7 +568,7 @@ body {
 }
 
 .contact-item h4 {
-    color: #1e293b;
+    color: #7096d5;
     margin-bottom: 0.5rem;
 }
 
